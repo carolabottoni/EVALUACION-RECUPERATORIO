@@ -5,7 +5,7 @@ namespace ConsoleApp4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           
             string[] dias = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
             List<List<double>> semana = new List<List<double>>();
 
@@ -17,7 +17,7 @@ namespace ConsoleApp4
 
                 while (true)
                 {
-                    Console.Write($"🌡️ Medición {medicion} - Ingrese temperatura en °C: ");
+                    Console.Write($" Medición {medicion} - Ingrese temperatura en °C: ");
                     if (double.TryParse(Console.ReadLine(), out double temp))
                     {
                         if (temp < -30 || temp > 50)
@@ -31,7 +31,7 @@ namespace ConsoleApp4
                     }
                     else
                     {
-                        Console.WriteLine("❌ Entrada inválida.");
+                        Console.WriteLine("Entrada inválida.");
                     }
 
                     Console.Write("¿Desea ingresar otra temperatura? (S/N): ");
@@ -73,7 +73,7 @@ namespace ConsoleApp4
                 int diaMenor = semana.Select((temps, i) => new { Index = i, Prom = temps.Average() })
                                      .OrderBy(x => x.Prom).First().Index;
 
-                Console.WriteLine("\n📅 Resumen semanal:");
+                Console.WriteLine("\n Resumen semanal:");
                 Console.WriteLine($"Total de mediciones: {totalMediciones}");
                 Console.WriteLine($"Promedio semanal: {promedioSemanal:F2}°C");
                 Console.WriteLine($"Día con mayor promedio: {dias[diaMayor]}");
